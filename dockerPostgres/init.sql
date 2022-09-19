@@ -17,10 +17,10 @@ create table T_USUARIO (
                            "user_id" serial not null,
                            "user_username" varchar(150) not null,
                            "user_password" varchar(255) not null,
-                           "user_tipo_rol_id" int not null,
+                           "user_rol_id" int not null,
                            primary key ("user_id"),
                            constraint "fk_usuario_rol"
-                               foreign key ("user_tipo_rol_id")
+                               foreign key ("user_rol_id")
                                    references T_ROL ("rol_id")
                                    on delete no action
                                    on update no action
@@ -67,3 +67,6 @@ create table T_VACUNA(
                                  on delete no action
                                  on update no action
 );
+
+INSERT INTO public.t_rol (rol_id, rol_nombre) VALUES (1, 'ADMIN');
+INSERT INTO public.t_rol (rol_id, rol_nombre) VALUES (2, 'USER');

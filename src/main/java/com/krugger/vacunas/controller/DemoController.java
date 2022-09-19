@@ -1,12 +1,17 @@
 package com.krugger.vacunas.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import io.swagger.v3.oas.annotations.Operation;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DemoController {
 
-    @RequestMapping("/hello")
+    @Operation(
+            summary = "Demo para pruebas",
+            description = "Api para probar el funcionamiento"
+    )
+    @GetMapping("/hello")
     public String hello(){
         return "Hello";
     }
