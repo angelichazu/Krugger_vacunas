@@ -16,6 +16,6 @@ public class TipoVacuna implements Serializable {
     @Column(name = "tipo_vac_id")
     private Integer tpVacId;
 
-    @Column(name = "tipo_vac_descripcion")
-    private String tpVacDescripcion;
+    @Column(name = "tipo_vac_nombre")
+    private String tpVacNombre;
 }

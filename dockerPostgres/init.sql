@@ -8,7 +8,7 @@ create table T_ROL (
 drop table if exists T_TIPO_VACUNA;
 create table T_TIPO_VACUNA (
                                "tipo_vac_id" serial not null,
-                               "tipo_vac_descripcion" varchar(100) not null,
+                               "tipo_vac_nombre" varchar(100) not null,
                                primary key ("tipo_vac_id")
 );
 
@@ -70,3 +70,7 @@ create table T_VACUNA(
 
 INSERT INTO public.t_rol (rol_id, rol_nombre) VALUES (1, 'ADMIN');
 INSERT INTO public.t_rol (rol_id, rol_nombre) VALUES (2, 'USER');
+INSERT INTO public.t_tipo_vacuna (tipo_vac_id, tipo_vac_nombre) VALUES (1, 'Sputnik');
+INSERT INTO public.t_tipo_vacuna (tipo_vac_id, tipo_vac_nombre) VALUES (2, 'AstraZeneca');
+INSERT INTO public.t_tipo_vacuna (tipo_vac_id, tipo_vac_nombre) VALUES (3, 'Pfizer');
+INSERT INTO public.t_tipo_vacuna (tipo_vac_id, tipo_vac_nombre) VALUES (4, 'Jhonson&Jhonson');
