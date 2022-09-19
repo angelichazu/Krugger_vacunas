@@ -41,20 +41,20 @@ public class Empleado implements Serializable {
     @Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "El correo ingresado no es correcto")
     private String empCorreo;
 
-    @Column(name = "emp_fecha_nacimiento")
+    @Column(name = "emp_fecha_nac")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date empFechaNacimiento;
 
-    @Column(name = "emp_direccion_domicilio")
-    private String empDireccionDomicilio;
+    @Column(name = "emp_direccion")
+    private String empDireccion;
 
     @Column(name = "emp_telefono")
     @Pattern(regexp = "^[0-9]{10}$", message = "El telefono ingresado no es correcto")
     private String empTelefono;
 
 
-    @Column(name = "emp_vacunado")
-    private Boolean empVacunado;
+    @Column(name = "emp_estado_vacuna")
+    private Boolean empEstadoVacuna;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "empleado", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)

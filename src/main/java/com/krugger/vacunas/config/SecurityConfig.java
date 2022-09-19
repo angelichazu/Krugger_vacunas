@@ -18,6 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .cors().and()
                 .authorizeRequests()
+                .antMatchers("/empleado/crearEmpleado", "/empleado/listarEmpleados").hasRole("ADMIN")
                 .antMatchers( "/api/vacuna/**","/hello").permitAll()
                 .anyRequest().authenticated()
                 .and()
