@@ -1,25 +1,25 @@
 version: "3"
 
 services:
-  db:
+  basedatos:
     build:
       context: ./dockerPostgres
       dockerfile: db.Dockerfile
-    container_name: db
-    hostname: db
+    container_name: basedatos
+    hostname: basedatos
     environment:
-      POSTGRES_USER: kruger
-      POSTGRES_DB: krugger_vacuna
+      POSTGRES_USER: admin
+      POSTGRES_DB: vacunas
       POSTGRES_PASSWORD: Patito.123@
     ports:
       - "5432:5432"
   springboot-docker-container:
-    image: springboot-krugger_vacunas
-    container_name: springboot-krugger_vacunas
+    image: back-vacuna
+    container_name: back-vacuna
     ports:
       - "8090:8090"
     build:
       context: ./
       dockerfile: Dockerfile
     depends_on:
-      - db
+      - basedatos
