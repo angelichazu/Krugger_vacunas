@@ -34,7 +34,7 @@ public class EmpleadoService {
 
     public Empleado crearEmpleado(EmpleadoDto empleado) throws Exception{
 
-        if (!UtilsApi.validadorDeCedula(empleado.getCorreo())) {
+        if (!UtilsApi.validadorDeCedula(empleado.getCedula())) {
             throw new Exception("Cédula no válida");
         }
 
